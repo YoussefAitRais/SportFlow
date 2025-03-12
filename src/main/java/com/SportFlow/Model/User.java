@@ -1,6 +1,6 @@
 package com.SportFlow.Model;
 
-public class UserModel {
+public class User {
 
     private int id ;
     private String nomcomplet ;
@@ -10,9 +10,9 @@ public class UserModel {
 
 
 
-    public UserModel() {}
+    public User() {}
 
-    public UserModel(int id, String nomcomplet, String email, String password, String role) {
+    public User(int id, String nomcomplet, String email, String password, String role) {
         this.id = id;
         this.nomcomplet = nomcomplet;
         this.email = email;
