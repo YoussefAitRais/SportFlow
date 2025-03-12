@@ -1,6 +1,6 @@
 package com.SportFlow.Model;
 
-public class CoachModel extends User {
+public class Coach extends User {
 
 
     private String specialite;

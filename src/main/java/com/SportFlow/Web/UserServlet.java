@@ -21,4 +21,6 @@ public class UserServlet extends HttpServlet {
         int id = Integer.parseInt(req.getParameter("id"));
 
     }
+
+
 }
