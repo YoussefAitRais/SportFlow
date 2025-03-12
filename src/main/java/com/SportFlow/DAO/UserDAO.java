@@ -31,18 +31,18 @@ public class UserDAO {
     }
 
 
-    public User getUser (User user ) throws SQLException {
-        String query = "SELECT * FROM users WHERE email = ? AND password = ?";
+    public User getUser (String email,String password) throws SQLException {
+        String query = "SELECT * FROM utilisateur WHERE email = ? AND password = ?";
         ResultSet rs = null;
         try
                 (PreparedStatement stmt = connection.prepareStatement(query)) {
-            stmt.setString(1, user.getEmail());
-            stmt.setString(2, user.getPassword());
+            stmt.setString(1, email);
+            stmt.setString(2, password);
             rs = stmt.executeQuery();
 
             if (rs.next()) {
                 return new User(
-                        rs.getInt("id"),
+                        rs.getInt("id_users"),
                         rs.getString("nomcomplet"),
                         rs.getString("email"),
                         rs.getString("password"),
@@ -57,7 +57,5 @@ public class UserDAO {
     }
 
 
-    public User getUser(String email, String password) {
-        return null;
-    }
+
 }

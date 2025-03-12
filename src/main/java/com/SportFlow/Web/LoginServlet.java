@@ -27,17 +27,23 @@ public class LoginServlet  extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String email = req.getParameter("email");
-        String password = req.getParameter("paswword");
+        String password = req.getParameter("password");
 
 
-        User user = userDAO.getUser(email, password);
-
-        if (user != null) {
-            HttpSession session = req.getSession();
-            session.setAttribute("user", user);
-            resp.sendRedirect("dashboard.jsp"); // Redirect to dashboard
-        } else {
-            resp.sendRedirect("login.jsp?error=1"); // Redirect with error
+        try {
+            if (userDAO.getUser(email, password) != null) {
+                HttpSession session = req.getSession();
+                try {
+                    session.setAttribute("user", userDAO.getUser(email, password));
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
+                resp.sendRedirect("success.jsp"); // Redirect to dashboard
+            } else {
+                resp.sendRedirect("login.jsp?error=1"); // Redirect with error
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
