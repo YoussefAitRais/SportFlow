@@ -7,17 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - SportFlow</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Random Sports Background from Unsplash */
-        body {
-            background: url('https://source.unsplash.com/1600x900/?sports') no-repeat center center fixed;
-            background-size: cover;
-        }
-    </style>
 </head>
-<body class="h-screen flex items-center justify-center">
+<body class="w-full min-h-screen flex justify-center items-center bg-no-repeat bg-cover" style="background-image: url('./image/3d-gym.jpg');">
 
-<div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-md w-full">
+<div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-md w-full mx-auto">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login to SportFlow</h2>
 
     <%-- Display error message if login fails --%>
@@ -43,7 +36,7 @@
             <select name="role" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
                 <option value="user">Member</option>
-                <option value="admin">Coach</option>
+                <option value="coach">Coach</option> <%-- Fixed role value to avoid duplicate "admin" --%>
             </select>
         </div>
 

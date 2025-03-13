@@ -7,11 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - SportFlow</title>
     <script src="https://cdn.tailwindcss.com"></script>
-
 </head>
-<body class="h-screen flex items-center justify-center" style="background-image: url('./image/football.jpg'")
+<body class="w-full relative bg-no-repeat bg-cover" style="background-image: url('./image/gym-salle.jpg');">
 
-<div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-md w-full">
+<div class="bg-white bg-opacity-90 p-8 rounded-lg shadow-lg max-w-md w-full mx-auto mt-10">
     <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Create an Account</h2>
 
     <%-- Display error message if registration fails --%>
@@ -43,7 +42,7 @@
             <select name="role" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
                 <option value="user">Member</option>
-                <option value="admin">Coach</option>
+                <option value="coach">Coach</option>  <%-- Changed value to "coach" --%>
                 <option value="admin">Admin</option>
             </select>
         </div>
