@@ -16,7 +16,7 @@ public class UserDAO {
     }
 
     public void addUser(User user) throws SQLException {
-        String query = "INSERT INTO users (name,email,password,role) VALUES ( ?, ?, ?, ?)";
+        String query = "INSERT INTO utilisateur (nomcomplet,email,password,role) VALUES ( ?, ?, ?, ?)";
         try (Connection conn = DBConnection.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
             stmt.setString(1, user.getNomcomplet());
