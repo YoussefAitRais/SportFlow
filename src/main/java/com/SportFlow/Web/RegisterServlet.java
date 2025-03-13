@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
 
-@WebServlet ("Register")
+@WebServlet ("/Register")
 public class RegisterServlet extends HttpServlet {
 
     private UserDAO userDAO ;
@@ -28,18 +28,18 @@ public class RegisterServlet extends HttpServlet {
         String nomcomplet = req.getParameter("nomcomplet");
         String email = req.getParameter("email");
         String password = req.getParameter("password");
-        String role = "user";
+        String role = req.getParameter("role");
 
-        User newuser = new User(0, nomcomplet, email, password, role);
+        User newUser = new User(0, nomcomplet, email, password, role);
 
         try {
-            userDAO.addUser(new User);
-            resp.sendRedirect("login.jsp");
-
-
+            userDAO.addUser(newUser);
+            resp.sendRedirect("login.jsp?success=1");
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            resp.sendRedirect("register.jsp?error=1");
         }
 
 
     }
+}

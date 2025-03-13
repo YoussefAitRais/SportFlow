@@ -43,7 +43,7 @@ public class LoginServlet  extends HttpServlet {
                 resp.sendRedirect("login.jsp?error=1"); // Redirect with error
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }
