@@ -30,7 +30,7 @@ public class RegisterServlet extends HttpServlet {
         String password = req.getParameter("password");
         String role = req.getParameter("role");
 
-        User newUser = new User(0, nomcomplet, email, password, role);
+        User newUser = new User( nomcomplet, email, password, role);
 
         try {
             userDAO.addUser(newUser);

@@ -22,7 +22,7 @@ public class UserDAO {
             stmt.setString(1, user.getNomcomplet());
             stmt.setString(2, user.getEmail());
             stmt.setString(3, user.getPassword());
-            stmt.setString(4, String.valueOf(user.getRole()));
+            stmt.setString(4, user.getRole());
             stmt.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

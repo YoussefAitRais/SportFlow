@@ -41,7 +41,7 @@
             <label class="block text-gray-700 font-semibold">Role:</label>
             <select name="role" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring focus:ring-blue-300">
-                <option value="user">Member</option>
+                <option value="member">Member</option>
                 <option value="coach">Coach</option>  <%-- Changed value to "coach" --%>
                 <option value="admin">Admin</option>
             </select>
