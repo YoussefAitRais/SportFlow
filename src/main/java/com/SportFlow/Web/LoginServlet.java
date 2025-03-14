@@ -38,11 +38,11 @@ public class LoginServlet  extends HttpServlet {
                 } catch (SQLException e) {
                     throw new RuntimeException(e);
                 }
-                resp.sendRedirect("success.jsp"); // Redirect to dashboard
-            } else {
-                resp.sendRedirect("login.jsp?error=1"); // Redirect with error
-            }
-        } catch (SQLException e) {
+                resp.sendRedirect("Dashboard.jsp"); // Redirect to dashboard
+
+             }
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
     }

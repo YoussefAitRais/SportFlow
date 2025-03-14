@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter ("/*")
+@WebFilter ("/Dashboard.jsp")
 public class AuthtFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -21,7 +21,7 @@ public class AuthtFilter implements Filter {
         HttpSession session = req.getSession(false);
 
         if (session == null || session.getAttribute("user") == null) {
-            resp.sendRedirect(req.getContextPath() + "/login.jsp"); // Redirect to login page
+            resp.sendRedirect(req.getContextPath() + "/login.jsp");
             return;
         }
 
