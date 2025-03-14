@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter
+@WebFilter ("/*")
 public class AuthtFilter implements Filter {
     @Override
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
@@ -25,5 +25,8 @@ public class AuthtFilter implements Filter {
             return;
         }
 
+        chain.doFilter(request, response);
+
     }
+
 }
